@@ -19,7 +19,7 @@
 				<h1 class="content__title">Search GitHub Users - {{ message }}</h1>
 
 				<!-- Search -->
-				<form class="search">
+				<form class="search" @submit.prevent="doSearch">
 					<input
 						type="text"
 						class="search__input"
