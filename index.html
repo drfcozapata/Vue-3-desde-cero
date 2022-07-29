@@ -31,8 +31,23 @@
 				</form>
 
 				<!-- Result -->
+				<div class="result" v-if="result">
+					<h2 class="result__name">Francisco Zapata</h2>
+					<img
+						src="https://avatars.githubusercontent.com/u/42281277?v=4"
+						alt=""
+						class="result__avatar"
+					/>
+					<p class="result__bio">
+						Freelancer | Web Developer Junior (Learning) | Dad | Pediatrician
+						<br />
+						<br />
+						<a href="" style="color: white">No tiene blog</a>
+					</p>
+				</div>
+
 				<!-- Error -->
-				<div class="result__error"></div>
+				<div class="result__error" v-if="error">{{ error }}</div>
 			</article>
 		</div>
 
