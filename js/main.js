@@ -16,7 +16,7 @@ const app = Vue.createApp({
 				if (!res.ok) throw new Error('User not found');
 				const data = await res.json();
 				console.log(data);
-				this.result = true;
+				this.result = data;
 			} catch (error) {
 				this.error = error;
 			} finally {

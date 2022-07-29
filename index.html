@@ -32,17 +32,23 @@
 
 				<!-- Result -->
 				<div class="result" v-if="result">
-					<h2 class="result__name">Francisco Zapata</h2>
+					<h2 class="result__name">{{ result.name }}</h2>
 					<img
-						src="https://avatars.githubusercontent.com/u/42281277?v=4"
-						alt=""
+						:src="result.avatar_url"
+						:alt="result.name"
 						class="result__avatar"
 					/>
 					<p class="result__bio">
-						Freelancer | Web Developer Junior (Learning) | Dad | Pediatrician
+						{{ result.bio }}
 						<br />
 						<br />
-						<a href="" style="color: white">No tiene blog</a>
+						<component
+							:is="result.blog?'a':'span'"
+							:href="result.blog || ''"
+							target="_blank"
+							style="color: white"
+							>{{ result.blog ? result.blog : '(No tiene blog)'}}</component
+						>
 					</p>
 				</div>
 
