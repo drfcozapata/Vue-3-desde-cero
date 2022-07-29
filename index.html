@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>GitHub Search</title>
 		<link rel="stylesheet" href="css/main.css" />
+		<script src="https://unpkg.com/vue@3"></script>
 	</head>
 
 	<body>
@@ -15,7 +16,7 @@
 
 			<!-- Content -->
 			<article class="content">
-				<h1 class="content__title">Search GitHub Users</h1>
+				<h1 class="content__title">Search GitHub Users - {{ message }}</h1>
 
 				<!-- Search -->
 				<form class="search">
@@ -33,6 +34,10 @@
 				<div class="result__error"></div>
 			</article>
 		</div>
+
 		<script src="js/main.js"></script>
+		<script>
+			const mountedApp = app.mount('#app');
+		</script>
 	</body>
 </html>
