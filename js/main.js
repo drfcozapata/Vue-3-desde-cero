@@ -9,6 +9,15 @@ const app = Vue.createApp({
 			favorites: new Map(),
 		};
 	},
+	created() {
+		const savedFavorites = JSON.parse(window.localStorage.getItem('favorites'));
+		if (savedFavorites.length) {
+			const favorites = new Map(
+				savedFavorites.map(favorite => [favorite.id, favorite])
+			);
+			this.favorites = favorites;
+		}
+	},
 	computed: {
 		isFavorite() {
 			return this.favorites.has(this.result.id);
